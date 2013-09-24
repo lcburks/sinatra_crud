@@ -1,0 +1,24 @@
+<form action='<%= @back.nil? ? "/backs/create" : "/backs/#{@back.id}" %>' method='post'>
+
+	<div>
+		<label>Name:</label>
+		<input value='<%= @back['name'] if @back %>' type ='text' name='back[name]' autofocus/>
+	</div>
+
+
+	<div>
+		<label>Height:</label>
+		<input value='<%= @back['height'] if @back %>' type ='text' name='back[height]'/>
+	</div>
+
+
+	<div>
+		<label>Weight:</label>
+		<input value='<%= @back['weight'] if @back%>' type ='text' name='back[weight]'/>
+	</div>
+	
+	<br>
+
+<button><%= @back.nil? ? "Submit Back" : "Edit Back" %></button> <!-- #only the new back shows up as a button?? Note: When you type button tags between the form tags (at least)to create a button there is built in functionalituy. its nto just a decritpion of a cosmwetic thing . whe you hit it it automtically takes osme action in realtion to the form. in thsi case it psots(?) the data to somethign?? im sure what it does exactly is in the form action.... code at the very top of this page. see what part of that statmt at top tells the button what to do. also any buttons between the form tags will do the mae thing. if a button is beneath the form tag it may bto do anythign...??, check it otu to see wha in,. they know to do  -->
+	
+</form> 

@@ -1,0 +1,48 @@
+<section>
+
+<div>
+  <strong><%= @back.name%></strong>
+  (player id# <%= @back.id%>) is a: 
+  <%= @back.height %> inch tall, 
+  <%= @back.weight %> pound running back
+</div>
+
+
+<% if !@back.tests.empty? %> <!-- #is the stest are nto empty ecevute this part. if its not it just skips over this part I guess???? there seems to be a difference between a space after empty and the question amrk and no space bewtween the two. mean two diferent things. tkaing the space out fixed an error. geuss you have to knwo the difference between space or not wuth special chracters-->
+
+  <h3>Test(s):</h3>
+    <% if !@back.tests.each do |test|%> <!-- # whiy is this not a instance varibale liek at nav_dogs?? anyway take each specified elemnt in the tests -->
+    <div>Grade: <%= test.grade %></div>
+    <div>Forty: <%= test.forty_dash %></div>
+    <div>Bench: <%= test.bench_press %></div>
+    <div>Vert: <%= test.vertical_jump %></div>
+    <div>Broad: <%= test.broad_jump %></div>
+    <br>
+     <% end %>
+  <% end %> <!-- # figure out what all these ends are doing -->
+
+<% end %>
+
+
+
+  <form action='/backs/<%= @back.id %>/edit/' method='get'>
+   <button>Edit Player</button>
+   </form> 
+
+   <!-- <a href='/backs/<%= @back.id %>/edit/'>Edit</a> just another way of making something todo the same thing -->  
+  <br>
+
+   <form action='/backs/<%= @back.id %>/new_test' method='get'>
+   <button>Add Test</button>
+   </form> 
+
+
+  <br>
+   <form action='/backs/<%= @back.id %>/delete' method='post'>
+  <button>Delete Player</button>
+  </form>
+
+</div>
+</section>
+
+

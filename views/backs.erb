@@ -1,0 +1,15 @@
+<%if @nav_backs %> <!-- #if there are eleents in nav backs, do whats underneath. if nto i guess none of this executes and it goes back to main???? -->
+
+	<h1>| Running Backs |</h1> 
+	<% @nav_backs.each do |back| %> <!-- for each element in nav_backs array (is this an array, and if so can you access an array element by saying arry.element_name? i though you coudlonly do it by elkement number, there are key valeu pairs in an array right???, print out the value for each of the keys below -->
+
+	<h2>(<%= back.id%>)
+		<%= back.name %> </h2> <!-- #this ntoationis what? it says embeddd ruby but i didint knwo you could say array or hash(whichever back this truly is, figure that otu)nad just add.kry or .element? to it and get out its value?? you can do this in normal ruby? --> 
+	<h4>
+		<%= back.height %> inches
+		<%= back.weight %> pounds
+	</h4>
+
+	
+<% end %>
+<% end %>
